@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import service1 from "../../assets/services/service1.json";
 import service2 from "../../assets/services/service2.json";
 import service3 from "../../assets/services/service3.json";
+import service4 from "../../assets/services/service4.json"
+import service5 from "../../assets/services/service5.json"
 import Lottie from "lottie-react";
 import { useEffect, useRef } from "react";
 
@@ -13,7 +15,7 @@ const services = [
     name: "UI/UX Design",
     text: "Innovative mobile solutions.",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: service1,
+    img: service2,
   },
   {
     id: 2,
@@ -27,21 +29,21 @@ const services = [
     name: "AI Technologies",
     text: "Smart, empathetic solutions.",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: service2,
+    img: service3,
   },
   {
     id: 4,
     name: "Digital Marketing",
     text: "Helping you reach your audience.",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: service2,
+    img: service5,
   },
   {
     id: 5,
     name: "Graphic Design",
     text: "Visually captivating designs.",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: service3,
+    img: service4,
   },
 ];
 
@@ -95,11 +97,11 @@ const Services = () => {
   };
 
   return (
-    <div className="w-full bg-sectionBg2">
+    <div className="w-full bg-gray-200">
       <div className="min-h-[80vh] max-w-[1280px] mx-auto py-[50px] flex items-center justify-center flex-col">
         <h1
           ref={textRef}
-          className={`px-7 py-1.5 mb-2 bg-red-100 font-semibold text-red-600 w-[fit-content] rounded-full ${
+          className={`px-7 py-1.5 mb-2 bg-gray-300 font-semibold text-primary w-[fit-content] rounded-full ${
             textVisible ? "animate-fade-in" : ""
           }`}
         >

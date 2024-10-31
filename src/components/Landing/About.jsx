@@ -43,13 +43,13 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="col-span-1 px-3 max-md:px-6"
         >
-          <h1 className="px-7 py-1.5 mb-2 bg-red-100 font-semibold text-red-600 w-[fit-content] rounded-full">
+          <h1 className="px-7 py-1.5 mb-2 bg-gray-300 font-semibold text-primary w-[fit-content] rounded-full">
             About Us
           </h1>
           <h2 className="mb-2 text-3xl font-semibold">
             Lorem ipsum dolor sit amet.
           </h2>
-          <p className="text-lg text-gray-600 mb-4 max-w-[550px]">
+          <p className="text-lg text-gray-900 mb-4 max-w-[550px]">
             At Sepnoty, we`re on a mission to transform mental health support
             through technology. Our community is built on empathy, innovation,
             and connection.
