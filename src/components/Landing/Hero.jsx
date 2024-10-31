@@ -1,13 +1,16 @@
 import Lottie from "lottie-react";
 import { motion } from "framer-motion";
-import heroAnimation from "../assets/hero.json";
+import heroAnimation from "../../assets/hero.json";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import AnimatedButton from "./AnimatedButton";
+import AnimatedButton from "../AnimatedButton";
+import Header from "../Header";
 
 const Hero = () => {
   const heroRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const fullText = " Join a community that cares.";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,20 +28,47 @@ const Hero = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (isVisible) {
+      let index = 0;
+      const typingInterval = setInterval(() => {
+        if (index < fullText.length - 1) {
+          setTypedText((prev) => prev + fullText[index]);
+          index++;
+        } else {
+          clearInterval(typingInterval);
+        }
+      }, 100);
+      return () => clearInterval(typingInterval);
+    } else {
+      setTypedText("");
+    }
+  }, [isVisible]);
+
   const animationVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 7,
+      },
+    },
   };
 
   return (
     <div
       ref={heroRef}
-      className="w-full min-h-screen flex items-center justify-center"
+      className="w-full min-h-[80vh] md:min-h-screen py-[100px] flex items-center justify-center"
       style={{
         background:
           "linear-gradient(135deg, #ac8ae2 0%, #b98cdc 50%, #FFA6B5 100%)",
+        clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
       }}
     >
+      <Header />
       <div className="w-full max-w-[1280px] px-2 grid grid-cols-2">
         <div className="col-span-1 max-lg:col-span-2 flex flex-col items-start justify-center px-4 max-lg:items-center gap-2">
           <motion.h1
@@ -60,7 +90,7 @@ const Hero = () => {
             variants={animationVariants}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Join a <span>community</span> that cares.
+            {typedText}
           </motion.h2>
           <motion.div
             initial="hidden"

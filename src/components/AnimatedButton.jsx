@@ -1,8 +1,12 @@
 // eslint-disable-next-line
-const AnimatedButton = ({ text }) => {
+const AnimatedButton = ({ text, small = false }) => {
   return (
     <button className="group inline-flex items-center gap-3 font-semibold text-white rounded-full px-5 py-3 bg-primary hover:bg-secondary transition-colors duration-300">
-      <span className="relative flex-shrink-0 w-6 h-6 bg-white text-primary rounded-full grid place-items-center">
+      <span
+        className={`relative flex-shrink-0 ${
+          small ? "w-5 h-5" : "w-6 h-6"
+        } bg-white text-primary rounded-full grid place-items-center`}
+      >
         <svg
           viewBox="0 0 14 15"
           fill="none"
@@ -29,7 +33,11 @@ const AnimatedButton = ({ text }) => {
           ></path>
         </svg>
       </span>
-      <span className="group-hover:text-white">{text}</span>
+      <span
+        className={`group-hover:text-white ${small ? "text-sm" : "text-base"}`}
+      >
+        {text}
+      </span>
     </button>
   );
 };
