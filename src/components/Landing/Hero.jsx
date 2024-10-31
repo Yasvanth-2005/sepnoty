@@ -63,8 +63,9 @@ const Hero = () => {
       ref={heroRef}
       className="w-full min-h-[80vh] md:min-h-screen py-[100px] flex items-center justify-center"
       style={{
+
         background:
-          "linear-gradient(135deg, #ac8ae2 0%, #b98cdc 50%, #FFA6B5 100%)",
+          "linear-gradient(15deg, #0b1121 0%, #275193 50%, #bec2bf 100%)",
         clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
       }}
     >
@@ -79,7 +80,7 @@ const Hero = () => {
             variants={animationVariants}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-primary">Connecting</span>{" "}
+            <span className="text-white">Connecting</span>{" "}
             <br className="max-lg:hidden" /> Empathy Seekers{" "}
             <br className="lg:hidden" /> and Providers
           </motion.h1>
