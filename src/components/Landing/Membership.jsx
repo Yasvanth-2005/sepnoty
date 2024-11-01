@@ -92,7 +92,7 @@ const MemberShip = () => {
         animate={sectionVisible ? "visible" : "hidden"}
         variants={animationVariants}
         transition={{ duration: 0.5, delay: 1 }}
-        className="text-lg max-w-[700px] text-gray-600 text-center px-20 mt-1 font-semibold"
+        className="text-lg max-w-[700px] text-gray-600 text-center px-20 max-md:px-6 mt-1 font-semibold"
       >
         Unlock exclusive benefits and become part of our supportive community
       </motion.p>
@@ -105,7 +105,7 @@ const MemberShip = () => {
             <motion.div
               key={s.id}
               ref={cardRef}
-              className="w-[380px] mb-4 p-5 flex items-center justify-center flex-col bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105"
+              className="w-[90%] max-w-[380px] mb-4 p-5 flex items-center justify-center flex-col bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105"
               initial="hidden"
               animate={cardVisible ? "visible" : "hidden"}
               variants={animationVariants}

@@ -113,7 +113,7 @@ const Services = () => {
           What We Offer
         </p>
         <p
-          className={`text-lg mt-1 max-w-[700px] mb-4 text-gray-600 text-center px-20 mt-1 font-semibold ${
+          className={`text-lg mt-1 max-w-[700px] mb-4 text-gray-600 text-center px-20 max-md:px-6 font-semibold ${
             textVisible ? "animate-fade-in" : ""
           }`}
         >

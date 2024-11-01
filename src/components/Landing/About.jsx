@@ -24,7 +24,7 @@ const About = () => {
 
   return (
     <div className="w-full py-8 bg-sectionBg min-h-[80vh] flex items-center justify-center">
-      <div className="max-w-[1280px] grid grid-cols-2 max-md:grid-cols-1 place-items-center">
+      <div className="max-w-[1280px] mx-auto grid grid-cols-2 max-md:grid-cols-1 place-items-center">
         <motion.div
           ref={lottieRef}
           initial="hidden"
